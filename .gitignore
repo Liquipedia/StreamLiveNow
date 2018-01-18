@@ -2,3 +2,4 @@ error_log.*
 errorlog.txt
 test.txt
 old/*.*
+youtube_client.js
