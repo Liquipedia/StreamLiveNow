@@ -30,8 +30,8 @@ display initial channel count
 display LIVE channel count
 */
 
-$api = 'https://terbets.id.lv/tl/sampleArrays/sampleArray.js';
-//$api = "http://live.afreecatv.com:8057/afreeca/broad_list_api.php";
+$api = 'https://terbets.id.lv/tl/sampleArrays/1.js';
+//$api = 'https://terbets.id.lv/tl/sampleArrays/2.js';
 //$api ="http://live.afreecatv.com/afreeca/broad_list_api.php";
 
 // add to file instead of losing content all the time

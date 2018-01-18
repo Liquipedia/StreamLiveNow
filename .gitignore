@@ -1,8 +1,11 @@
 error_log.*
 errorlog.txt
-test.txt
-old/*.*
-youtube_client.js
 error_log
+test.txt
+
+youtube_client.js
+
 vendor/*
 !vendor/autoload.php
+
+composer.lock
