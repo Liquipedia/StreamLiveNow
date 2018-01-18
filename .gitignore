@@ -9,3 +9,4 @@ vendor/*
 !vendor/autoload.php
 
 composer.lock
+composer.*
