@@ -1,6 +1,6 @@
 <?php
 
-require_once("config.php");
+require_once("config/db.php");
 
 $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
 $opt = [
@@ -30,7 +30,7 @@ display initial channel count
 display LIVE channel count
 */
 
-$api = 'https://terbets.id.lv/tl/sampleArray.js';
+$api = 'https://terbets.id.lv/tl/sampleArrays/sampleArray.js';
 //$api = "http://live.afreecatv.com:8057/afreeca/broad_list_api.php";
 //$api ="http://live.afreecatv.com/afreeca/broad_list_api.php";
 
