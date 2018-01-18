@@ -4,3 +4,5 @@ test.txt
 old/*.*
 youtube_client.js
 error_log
+vendor/*
+!vendor/autoload.php
