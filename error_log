@@ -1,0 +1,85 @@
+[15-Jan-2018 13:50:52 Europe/Dublin] PHP Warning:  file_get_contents(https://api.twitch.tv/kraken/streams/medrybw?clientid=iunn9vjy5ffoaowyf6bx5nxp6ttjsw): failed to open stream: HTTP request failed! HTTP/1.0 400 Bad Request
+ in /home/xerofurn/public_html/terbets.id.lv/tl/streamlivenow.php on line 5
+[15-Jan-2018 14:08:35 Europe/Dublin] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/xerofurn/public_html/terbets.id.lv/tl/streamlivenow.php on line 56
+[15-Jan-2018 15:59:01 Europe/Dublin] PHP Fatal error:  Cannot use object of type stdClass as array in /home/xerofurn/public_html/terbets.id.lv/tl/streamlivenow.php on line 60
+[15-Jan-2018 15:59:20 Europe/Dublin] PHP Fatal error:  Cannot use object of type stdClass as array in /home/xerofurn/public_html/terbets.id.lv/tl/streamlivenow.php on line 60
+[15-Jan-2018 16:00:25 Europe/Dublin] PHP Fatal error:  Cannot use object of type stdClass as array in /home/xerofurn/public_html/terbets.id.lv/tl/streamlivenow.php on line 60
+[15-Jan-2018 16:00:50 Europe/Dublin] PHP Parse error:  syntax error, unexpected '$error' (T_VARIABLE), expecting identifier (T_STRING) or namespace (T_NAMESPACE) or \\ (T_NS_SEPARATOR) in /home/xerofurn/public_html/terbets.id.lv/tl/streamlivenow.php on line 65
+[15-Jan-2018 16:01:26 Europe/Dublin] PHP Fatal error:  Cannot use object of type stdClass as array in /home/xerofurn/public_html/terbets.id.lv/tl/streamlivenow.php on line 63
+[15-Jan-2018 16:01:42 Europe/Dublin] PHP Fatal error:  Cannot use object of type stdClass as array in /home/xerofurn/public_html/terbets.id.lv/tl/streamlivenow.php on line 63
+[15-Jan-2018 16:01:44 Europe/Dublin] PHP Fatal error:  Cannot use object of type stdClass as array in /home/xerofurn/public_html/terbets.id.lv/tl/streamlivenow.php on line 63
+[15-Jan-2018 16:01:53 Europe/Dublin] PHP Fatal error:  Cannot use object of type stdClass as array in /home/xerofurn/public_html/terbets.id.lv/tl/streamlivenow.php on line 63
+[16-Jan-2018 08:09:07 Europe/Dublin] PHP Notice:  Array to string conversion in /home/xerofurn/public_html/terbets.id.lv/tl/streamlivenow.php on line 62
+[16-Jan-2018 08:12:03 Europe/Dublin] PHP Parse error:  syntax error, unexpected '"' in /home/xerofurn/public_html/terbets.id.lv/tl/streamlivenow.php on line 96
+[16-Jan-2018 09:49:27 Europe/Dublin] PHP Parse error:  syntax error, unexpected ';', expecting variable (T_VARIABLE) or '$' in /home/xerofurn/public_html/terbets.id.lv/tl/api.php on line 17
+[16-Jan-2018 10:25:16 Europe/Dublin] PHP Notice:  Undefined variable: streamingService in /home/xerofurn/public_html/terbets.id.lv/tl/index.php on line 158
+[16-Jan-2018 10:25:16 Europe/Dublin] PHP Notice:  Undefined variable: streamingService in /home/xerofurn/public_html/terbets.id.lv/tl/index.php on line 161
+[16-Jan-2018 10:25:16 Europe/Dublin] PHP Notice:  Undefined variable: streamingService in /home/xerofurn/public_html/terbets.id.lv/tl/index.php on line 164
+[16-Jan-2018 10:25:16 Europe/Dublin] PHP Notice:  Undefined variable: streamingService in /home/xerofurn/public_html/terbets.id.lv/tl/index.php on line 167
+[16-Jan-2018 10:25:16 Europe/Dublin] PHP Notice:  Undefined variable: streamingService in /home/xerofurn/public_html/terbets.id.lv/tl/index.php on line 170
+[16-Jan-2018 10:25:16 Europe/Dublin] PHP Notice:  Undefined variable: streamingService in /home/xerofurn/public_html/terbets.id.lv/tl/index.php on line 173
+[16-Jan-2018 10:25:16 Europe/Dublin] PHP Notice:  Undefined variable: streamingService in /home/xerofurn/public_html/terbets.id.lv/tl/index.php on line 176
+[16-Jan-2018 10:26:05 Europe/Dublin] PHP Fatal error:  Call to undefined function checkStreamStatus() in /home/xerofurn/public_html/terbets.id.lv/tl/index.php on line 159
+[16-Jan-2018 11:57:59 Europe/Dublin] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/xerofurn/public_html/terbets.id.lv/tl/api.php on line 29
+[17-Jan-2018 13:33:18 Europe/Dublin] PHP Notice:  Trying to get property of non-object in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 75
+[17-Jan-2018 13:33:18 Europe/Dublin] PHP Notice:  Trying to get property of non-object in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 75
+[17-Jan-2018 13:33:18 Europe/Dublin] PHP Warning:  Invalid argument supplied for foreach() in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 75
+[17-Jan-2018 13:33:27 Europe/Dublin] PHP Notice:  Trying to get property of non-object in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 75
+[17-Jan-2018 13:33:27 Europe/Dublin] PHP Notice:  Trying to get property of non-object in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 75
+[17-Jan-2018 13:33:27 Europe/Dublin] PHP Warning:  Invalid argument supplied for foreach() in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 75
+[17-Jan-2018 13:44:59 Europe/Dublin] PHP Notice:  Undefined offset: 0 in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 75
+[17-Jan-2018 13:44:59 Europe/Dublin] PHP Notice:  Trying to get property of non-object in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 75
+[17-Jan-2018 13:44:59 Europe/Dublin] PHP Notice:  Trying to get property of non-object in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 75
+[17-Jan-2018 13:44:59 Europe/Dublin] PHP Warning:  Invalid argument supplied for foreach() in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 75
+[17-Jan-2018 13:45:38 Europe/Dublin] PHP Notice:  Undefined offset: 0 in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 86
+[17-Jan-2018 13:46:08 Europe/Dublin] PHP Notice:  Undefined offset: 0 in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 86
+[17-Jan-2018 13:46:54 Europe/Dublin] PHP Notice:  Undefined offset: 1 in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 86
+[17-Jan-2018 13:47:09 Europe/Dublin] PHP Notice:  Undefined offset: 2 in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 86
+[17-Jan-2018 13:51:42 Europe/Dublin] PHP Warning:  stristr() expects parameter 1 to be string, array given in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 100
+[17-Jan-2018 13:55:43 Europe/Dublin] PHP Warning:  stristr() expects parameter 1 to be string, array given in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 100
+[17-Jan-2018 14:04:57 Europe/Dublin] PHP Notice:  Undefined index: uid in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 89
+[17-Jan-2018 14:05:22 Europe/Dublin] PHP Notice:  Undefined index: content_type in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 89
+[17-Jan-2018 14:11:32 Europe/Dublin] PHP Notice:  Undefined index: content_type in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 89
+[17-Jan-2018 14:41:49 Europe/Dublin] PHP Notice:  Undefined index: content_type in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 89
+[17-Jan-2018 14:42:03 Europe/Dublin] PHP Notice:  Undefined index: content_type in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 89
+[17-Jan-2018 14:43:59 Europe/Dublin] PHP Notice:  Undefined index: content_type in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 89
+[17-Jan-2018 14:48:10 Europe/Dublin] PHP Notice:  Undefined index: content_type in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 100
+[17-Jan-2018 14:48:18 Europe/Dublin] PHP Notice:  Undefined index: content_type in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 100
+[17-Jan-2018 15:02:45 Europe/Dublin] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 109
+[17-Jan-2018 15:02:45 Europe/Dublin] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 109
+[17-Jan-2018 15:02:45 Europe/Dublin] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 109
+[17-Jan-2018 15:02:45 Europe/Dublin] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 109
+[17-Jan-2018 15:02:45 Europe/Dublin] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 109
+[17-Jan-2018 15:02:45 Europe/Dublin] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 109
+[17-Jan-2018 15:02:45 Europe/Dublin] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 109
+[17-Jan-2018 15:35:17 Europe/Dublin] PHP Parse error:  syntax error, unexpected 'break' (T_BREAK) in /home/xerofurn/public_html/terbets.id.lv/tl/api.php on line 41
+[17-Jan-2018 15:35:17 Europe/Dublin] PHP Parse error:  syntax error, unexpected 'break' (T_BREAK) in /home/xerofurn/public_html/terbets.id.lv/tl/api.php on line 41
+[17-Jan-2018 15:35:31 Europe/Dublin] PHP Parse error:  syntax error, unexpected 'break' (T_BREAK) in /home/xerofurn/public_html/terbets.id.lv/tl/api.php on line 41
+[17-Jan-2018 16:04:33 Europe/Dublin] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 80
+[17-Jan-2018 16:14:41 Europe/Dublin] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2019] Unknown character set' in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php:11
+Stack trace:
+#0 /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php(11): PDO->__construct('mysql:host=loca...', NULL, NULL, Array)
+#1 {main}
+  thrown in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 11
+[17-Jan-2018 16:15:19 Europe/Dublin] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2019] Unknown character set' in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php:11
+Stack trace:
+#0 /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php(11): PDO->__construct('mysql:host=loca...', NULL, NULL, Array)
+#1 {main}
+  thrown in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 11
+[17-Jan-2018 16:15:51 Europe/Dublin] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2019] Unknown character set' in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php:11
+Stack trace:
+#0 /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php(11): PDO->__construct('mysql:host=loca...', 'xerofurn_liqui', 'asgYU$%**hjgYnr...', Array)
+#1 {main}
+  thrown in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 11
+[17-Jan-2018 16:15:52 Europe/Dublin] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2019] Unknown character set' in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php:11
+Stack trace:
+#0 /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php(11): PDO->__construct('mysql:host=loca...', 'xerofurn_liqui', 'asgYU$%**hjgYnr...', Array)
+#1 {main}
+  thrown in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 11
+  
+  
+[17-Jan-2018 16:49:32 Europe/Dublin] PHP Fatal error:  Call to a member function prepare() on null in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 101
+[17-Jan-2018 17:06:12 Europe/Dublin] PHP Fatal error:  Call to a member function prepare() on null in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 101
+[17-Jan-2018 17:47:25 Europe/Dublin] PHP Fatal error:  Call to a member function prepare() on null in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 101
+[17-Jan-2018 17:48:29 Europe/Dublin] PHP Fatal error:  Call to a member function prepare() on null in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 101
+[17-Jan-2018 17:48:37 Europe/Dublin] PHP Fatal error:  Call to a member function prepare() on null in /home/xerofurn/public_html/terbets.id.lv/tl/afreecatv_parser.php on line 101
