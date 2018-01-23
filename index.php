@@ -6,19 +6,26 @@
 <body>
 <!-- same structure as player pages with infobox on Liquipedia -->
 <div class="fo-nttax-infobox">
+
+	<a href="parser.php" >parser.php</a> |
+	<a href="afreecatvStreamList.php" >afreecatvStreamList.php</a> |
+	<a href="http://terbets.id.lv/tl/api/api.php" >/api/api.php</a>
+	<br /><br />
+
 	<a rel="nofollow noopener" class="external text" href="https://www.afreecatv.com/asgasga" >
-		<i class="lp-icon lp-twitch"></i>asgasga
+		<i class="lp-icon lp-twitch"></i>asgasga afreeca
 	</a> |
 	<a rel="nofollow noopener" class="external text" href="https://www.afreecatv.com/yyy2222" >
-		<i class="lp-icon lp-twitch"></i>yyy2222
+		<i class="lp-icon lp-twitch"></i>yyy2222 afreeca
 	</a> |
 	<a rel="nofollow noopener" class="external text" href="https://www.twitch.tv/medrybw" >
 		<i class="lp-icon lp-twitch"></i>medryBW twitch
 	</a> |
 	<a rel="nofollow noopener" class="external text" href="https://www.youtube.com/UCVeETS7uZTAARqvv2zssZCw" >
-		<i class="lp-icon lp-twitch"></i>UCVeETS7uZTAARqvv2zssZCw
-	</a> |
-	
+		<i class="lp-icon lp-twitch"></i>UCVeETS7uZTAARqvv2zssZCw youtube
+	</a>
+	<br />
+
 	<a rel="nofollow noopener" class="external text" href="https://www.twitch.tv/test_twitch" >
 		<i class="lp-icon lp-twitch"></i>test_twitch
 	</a> |

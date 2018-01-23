@@ -2,6 +2,9 @@
 
 Small module/plugin for Liquipedia
 
+## Demo
+http://terbets.id.lv/tl/
+
 ## What it does?
 Wiki pages that have an Infobox can feature links to streaming services. 
 If the player or organization is live, a notification will be shown on the wiki page.	
