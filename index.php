@@ -15,7 +15,10 @@
 	<a rel="nofollow noopener" class="external text" href="https://www.twitch.tv/medrybw" >
 		<i class="lp-icon lp-twitch"></i>medryBW twitch
 	</a> |
-
+	<a rel="nofollow noopener" class="external text" href="https://www.youtube.com/UCVeETS7uZTAARqvv2zssZCw" >
+		<i class="lp-icon lp-twitch"></i>UCVeETS7uZTAARqvv2zssZCw
+	</a> |
+	
 	<a rel="nofollow noopener" class="external text" href="https://www.twitch.tv/test_twitch" >
 		<i class="lp-icon lp-twitch"></i>test_twitch
 	</a> |

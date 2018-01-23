@@ -11,7 +11,7 @@ try {
 	];
 	$pdo = new PDO($dsn, DB_USER, DB_PASS, $opt);
 	if ($pdo->connect_error){
-		//die("Database connection failed: " . $conn->connect_error);
+		die("Database connection failed: " . $conn->connect_error);
 	} 
 	$sql = "SELECT * FROM afreecatv_streams WHERE 1";
 	$result = $pdo->query($sql);
@@ -21,7 +21,6 @@ try {
 	} else{
 		echo "Streams were not found.";
 	}
-	
 	
 	foreach($result as $rows)
 	{

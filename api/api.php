@@ -23,13 +23,16 @@ switch($streamingService)
 		checkStreamStatusOnAfreeca($channelName, $streamingService);
 		break;
 	case "douyu.com":
-		jsonResponse("false", $channelName, $streamingService);
+		checkStreamStatusOnDouyu($channelName, $streamingService);
 		break;
 	case "huomao.com":
-		jsonResponse("false", $channelName, $streamingService);
+		checkStreamStatusOnHuomao($channelName, $streamingService);
 		break;
 	case "youtube.com":
 		checkStreamStatusOnYoutube($channelName, $streamingService);
+		break;
+	case "facebook.com":
+		checkStreamStatusOnFacebook($channelName, $streamingService);
 		break;
 	default:
 		echo '{"live" : "false", "error" : "streaming service not recognized"}';
@@ -103,7 +106,6 @@ function checkStreamStatusOnTwitch($api, $channelName, $streamingService)
 
 function checkStreamStatusOnAfreeca($channelName, $streamingService)
 {
-	
 	try {
 		$dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
 		$opt = [
@@ -131,16 +133,52 @@ function checkStreamStatusOnAfreeca($channelName, $streamingService)
 
 function checkStreamStatusOnYoutube($channelName, $streamingService)
 {
-	
+	$API_KEY = 'AIzaSyB-rpirk39e2HoC1VxS6uTpM2jgKQuLp90';
 
-	if (1 === 0)
-	{
-		jsonResponse("true", $channelName, $streamingService);
-	}
-	else
+	$channelInfo = 'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId='.$channelName.'&type=video&eventType=live&key='.$API_KEY;
+
+	// echo $channelInfo;
+	
+	$extractInfo = file_get_contents($channelInfo);
+	$extractInfo = str_replace('},]',"}]",$extractInfo);
+	$showInfo = json_decode($extractInfo, true);
+
+	if($showInfo['pageInfo']['totalResults'] == 0)
 	{
 		jsonResponse("false", $channelName, $streamingService);
+	}else{
+		jsonResponse("true", $channelName, $streamingService);
 	}
+}
+
+function checkStreamStatusOnFacebook($channelName, $streamingService)
+{
+	/* PHP SDK v5.0.0 */
+	/* make the API call */
+	try {
+	  // Returns a `Facebook\FacebookResponse` object
+	  $response = $fb->get(
+		'/{video-id}',
+		'{access-token}'
+	  );
+	} catch(Facebook\Exceptions\FacebookResponseException $e) {
+	  echo 'Graph returned an error: ' . $e->getMessage();
+	  exit;
+	} catch(Facebook\Exceptions\FacebookSDKException $e) {
+	  echo 'Facebook SDK returned an error: ' . $e->getMessage();
+	  exit;
+	}
+	$graphNode = $response->getGraphNode();
+}
+
+function checkStreamStatusOnDouyu($channelName, $streamingService)
+{
+	jsonResponse("false", $channelName, $streamingService);
+}
+
+function checkStreamStatusOnHuomao($channelName, $streamingService)
+{
+	jsonResponse("false", $channelName, $streamingService);
 }
 
 function jsonResponse($bool, $channelName, $streamingService)
