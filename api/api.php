@@ -132,7 +132,7 @@ function checkStreamStatusOnAfreeca($channelName, $streamingService)
 function checkStreamStatusOnYoutube($channelName, $streamingService)
 {
 	
-	
+
 	if (1 === 0)
 	{
 		jsonResponse("true", $channelName, $streamingService);
