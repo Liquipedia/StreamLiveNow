@@ -6,6 +6,16 @@
 <body>
 <!-- same structure as player pages with infobox on Liquipedia -->
 <div class="fo-nttax-infobox">
+	<a rel="nofollow noopener" class="external text" href="https://www.afreecatv.com/asgasga" >
+		<i class="lp-icon lp-twitch"></i>asgasga
+	</a> |
+	<a rel="nofollow noopener" class="external text" href="https://www.afreecatv.com/yyy2222" >
+		<i class="lp-icon lp-twitch"></i>yyy2222
+	</a> |
+	<a rel="nofollow noopener" class="external text" href="https://www.twitch.tv/medrybw" >
+		<i class="lp-icon lp-twitch"></i>medryBW twitch
+	</a> |
+
 	<a rel="nofollow noopener" class="external text" href="https://www.twitch.tv/test_twitch" >
 		<i class="lp-icon lp-twitch"></i>test_twitch
 	</a> |
@@ -27,9 +37,6 @@
 	<a rel="nofollow noopener" class="external text" href="https://www.huomao.com/test_huomao" >
 		<i class="lp-icon lp-twitch"></i>test_huomao
 	</a> |
-	<a rel="nofollow noopener" class="external text" href="https://www.twitch.tv/medrybw" >
-		<i class="lp-icon lp-twitch"></i>medryBW twitch
-	</a>
 </div>
 <!-- display debug info here -->
 <div id="debug">

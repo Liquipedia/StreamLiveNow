@@ -1,4 +1,7 @@
 <?php
+
+require_once("../vendor/autoload.php");
+
 /*
 API request examples
 website.com/api.php?streamingService=twitch&channelName=medrybw
@@ -18,6 +21,9 @@ ToDo:
 // defense against improper use? Someone making too many requests?
 // return live: false if varnish cache is not working. I mean, what happens if varnish stops working properly? Too many requests would be made to twitch/smashcast/dailymotion/youtube APIs then. Hmm...
 // check if $_GET params are empty
+
+// error logging and management
+
 */
 
 $channelName = filter_var ( $_GET['channelName'], FILTER_SANITIZE_STRING);
@@ -47,7 +53,7 @@ switch($streamingService)
 		jsonResponse("false", $channelName, $streamingService);
 		break;
 	case "youtube.com":
-		jsonResponse("false", $channelName, $streamingService);
+		checkStreamStatusOnYoutube($channelName, $streamingService);
 		break;
 	default:
 		echo '{"live" : "false", "error" : "streaming service not recognized"}';
@@ -121,8 +127,37 @@ function checkStreamStatusOnTwitch($api, $channelName, $streamingService)
 
 function checkStreamStatusOnAfreeca($channelName, $streamingService)
 {
-	// check stream status in DB
-	if (1 === 1)
+	
+	try {
+		$dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
+		$opt = [
+			PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+			PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+			PDO::ATTR_EMULATE_PREPARES   => false,
+		];
+		$pdo = new PDO($dsn, DB_USER, DB_PASS, $opt);
+		if ($pdo->connect_error){
+			//die("Database connection failed: " . $conn->connect_error);
+		} 
+		$sql = "SELECT * FROM afreecatv_streams WHERE name = '" . $channelName . "'";
+		$result = $pdo->query($sql);
+		
+		if ($result->rowCount() > 0) {
+			jsonResponse("true", $channelName, $streamingService);
+		} else{
+			jsonResponse("false", $channelName, $streamingService);
+		}
+	} catch (PDOException $e) {
+		//echo 'Database exception: ',  $e->getMessage(), "\n";
+	}
+	$pdo = null;
+}
+
+function checkStreamStatusOnYoutube($channelName, $streamingService)
+{
+	
+	
+	if (1 === 0)
 	{
 		jsonResponse("true", $channelName, $streamingService);
 	}
@@ -136,5 +171,4 @@ function jsonResponse($bool, $channelName, $streamingService)
 {
 	echo '{"live":"' . $bool . '","channel":"' . $channelName .  '","streaming_service":"' . $streamingService .  '"}';
 }
-
 ?>

@@ -79,7 +79,11 @@ try {
 		PDO::ATTR_EMULATE_PREPARES   => false,
 	];
 	$pdo = new PDO($dsn, DB_USER, DB_PASS, $opt);
-	
+	if ($pdo->connect_error){
+		// log errror
+		die("Connection failed: " . $conn->connect_error);
+	}
+
 	$sql = "DELETE FROM afreecatv_streams WHERE 1";
 	$pdo->query($sql);
 	
@@ -95,11 +99,9 @@ try {
 		$stmt = $pdo->prepare($sql);
 		$stmt->execute($insertData);
 	}
-
 	echo "New records added successfully";
 } catch (PDOException $e) {
     echo 'Database exception: ',  $e->getMessage(), "\n";
-} finally {
 }
 $pdo = null;
 

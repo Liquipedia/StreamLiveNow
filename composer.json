@@ -1,5 +1,12 @@
 {
-  "require": {
-		"google/apiclient":"2.0"
-    }
+	"require": {
+		"google/apiclient":"2.0",
+		"phpdocumentor/phpdocumentor": "2.*"
+    },
+    "config": {
+    	"optimize-autoloader": true
+    },
+	"autoload": {
+		"files": ["config/db.php"]
+	}
 }
