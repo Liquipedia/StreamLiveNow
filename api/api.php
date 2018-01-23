@@ -2,30 +2,6 @@
 
 require_once("../vendor/autoload.php");
 
-/*
-API request examples
-website.com/api.php?streamingService=twitch&channelName=medrybw
-website.com/api.php?streamingService=afreecatv&channelName=cksgmldbs
-website.com/twitch/medrybw
-website.com/afreecatv/cksgmldbs
-
-Done:
-// .htaccess pretty URL
-// input validation
-// caching - outside the scope of this service. Varnish should take care of that
-
-ToDo:
-// store afreecatv links in DB, but info from other streams is retrieved via API or cached on the fly.
-// log request info, to make future easier
-// evaluate performance of this script. Is it too slow to handle all the requests?
-// defense against improper use? Someone making too many requests?
-// return live: false if varnish cache is not working. I mean, what happens if varnish stops working properly? Too many requests would be made to twitch/smashcast/dailymotion/youtube APIs then. Hmm...
-// check if $_GET params are empty
-
-// error logging and management
-
-*/
-
 $channelName = filter_var ( $_GET['channelName'], FILTER_SANITIZE_STRING);
 $streamingService = filter_var ( $_GET['streamingService'], FILTER_SANITIZE_STRING);
 
