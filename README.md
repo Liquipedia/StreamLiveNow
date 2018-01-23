@@ -7,7 +7,7 @@ Wiki pages that have an Infobox can feature links to streaming services.
 If the player or organization is live, a notification will be shown on the wiki page.	
 
 ## Architecture
-
+![Very simple and general architecture graph](https://github.com/XeroCodeIT/StreamLiveNow/blob/master/architecture.png)
 
 ## Files
 * index.php - 
