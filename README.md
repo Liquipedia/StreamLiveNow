@@ -7,14 +7,14 @@ Wiki pages that have an Infobox can feature links to streaming services.
 If the player or organization is live, a notification will be shown on the wiki page.	
 
 ## Files
-index.php - 
-afreecatvStreamList.php - 
-parser.php - 
-api.php - provides GET method, call examples:
-	/api.php?streamingService=twitch&channelName=medrybw
-	/api.php?streamingService=afreecatv&channelName=cksgmldbs
-	/twitch.com/medrybw
-	/afreecatv.com/cksgmldbs
+* index.php - 
+* afreecatvStreamList.php - 
+* parser.php - 
+* api.php - provides GET method, call examples:
+** 	/api.php?streamingService=twitch&channelName=medrybw
+** 	/api.php?streamingService=afreecatv&channelName=cksgmldbs
+** 	/twitch.com/medrybw
+** 	/afreecatv.com/cksgmldbs
 
 ## TODO:
 
