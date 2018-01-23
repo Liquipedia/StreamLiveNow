@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^([^/]*)/([^/]*)$ /tl/api/api.php?streamingService=$1&channelName=$2 [L]

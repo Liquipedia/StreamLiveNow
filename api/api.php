@@ -51,6 +51,7 @@ switch($streamingService)
 		break;
 	default:
 		echo '{"live" : "false", "error" : "streaming service not recognized"}';
+		// log an error?
 		break;
 }
 

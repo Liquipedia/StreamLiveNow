@@ -4,7 +4,7 @@
 <title>Stream Service Test Page</title>
 </head>
 <body>
-<!-- same structure as player pages on liquipedia -->
+<!-- same structure as player pages with infobox on Liquipedia -->
 <div class="fo-nttax-infobox">
 	<a rel="nofollow noopener" class="external text" href="https://www.twitch.tv/test_twitch" >
 		<i class="lp-icon lp-twitch"></i>test_twitch
@@ -26,6 +26,9 @@
 	</a> |
 	<a rel="nofollow noopener" class="external text" href="https://www.huomao.com/test_huomao" >
 		<i class="lp-icon lp-twitch"></i>test_huomao
+	</a> |
+	<a rel="nofollow noopener" class="external text" href="https://www.twitch.tv/medrybw" >
+		<i class="lp-icon lp-twitch"></i>medryBW twitch
 	</a>
 </div>
 <!-- display debug info here -->
@@ -39,12 +42,12 @@ findLink("smashcast.com");
 findLink("afreecatv.com");
 findLink("douyu.com");
 findLink("huomao.com");
-
 /*
 ToDo:
 // don't run this script on all pages...
 // stripping http(s):// part. Optimize and test carefully!
 // blinking animation if stream is live - change it to something better!
+// only finds the first link on the page
 */
 function findLink(streamingService)
 {
@@ -58,7 +61,7 @@ function findLink(streamingService)
 		$.ajax({
 		type: 'GET',
 		dataType: 'json',
-		url: 'https://terbets.id.lv/tl/'+ streamingService + "/" + userName,
+		url: 'http://terbets.id.lv/tl/api/'+ streamingService + "/" + userName,
 		success: function(data){
 			if (data.live === "true"){
 				console.log(userName + " is live on " + streamingService);

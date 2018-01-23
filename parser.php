@@ -1,21 +1,11 @@
 <?php
 
-require_once("config/db.php");
-
-$dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
-$opt = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-];
-$pdo = new PDO($dsn, DB_USER, DB_PASS, $opt);
-
-
+require_once("vendor/autoload.php");
 
 /*
 AfreecaTV channel list parser
 Get Live stream list:
-http://live.afreecatv.com:8057/afreeca/broad_list_api.php
+http://live.afreecatv.com/afreeca/broad_list_api.php
 
 make it a valid array, remove "var oBroadListData = "
 json_encode
@@ -30,9 +20,9 @@ display initial channel count
 display LIVE channel count
 */
 
-$api = 'https://terbets.id.lv/tl/sampleArrays/1.js';
-//$api = 'https://terbets.id.lv/tl/sampleArrays/2.js';
-//$api ="http://live.afreecatv.com/afreeca/broad_list_api.php";
+//$api = 'http://terbets.id.lv/tl/1.js';
+//$api = 'http://terbets.id.lv/tl/2.js';
+$api ="http://live.afreecatv.com/afreeca/broad_list_api.php";
 
 // add to file instead of losing content all the time
 $fp = fopen(dirname(__FILE__).'/errorlog.txt', 'w');
@@ -46,15 +36,13 @@ curl_setopt_array($ch, array(
 $response = curl_exec($ch);
 curl_close($ch);
 
-
-
 // convert to utf-8, lose all Korean symbols in the process
-$response = mb_convert_encoding($response, 'UTF-8', 'UTF-8'); 
 // convert the js array into a valid json array
 // remove js array definition
 // remove trailing ;
 // convert single ticks to double ticks
 // remove slashes
+$response = mb_convert_encoding($response, 'UTF-8', 'UTF-8'); 
 $old = array("var oBroadListData = ", 	"}};", 	"'", "\\");
 $new = array("", 						"}}", 	'"', "");
 $response = str_replace($old, $new, $response);
@@ -69,10 +57,10 @@ echo "</pre>";
 
 
 $aa = [];
-$bb = arraySearch('LIVE', $json['CHANNEL']['REAL_BROAD'],$aa);
+$AfreecaLiveStreamList = arraySearch('LIVE', $json['CHANNEL']['REAL_BROAD'],$aa);
 
 echo "<pre>";
-print_r($bb);
+print_r($AfreecaLiveStreamList);
 echo "</pre>";
 
 
@@ -81,37 +69,39 @@ echo "</pre>";
 
 
 
-// put streams in DB
 // 	remove all existing streams in DB
 //	add new streams in DB
+try {
+	$dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
+	$opt = [
+		PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+		PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+		PDO::ATTR_EMULATE_PREPARES   => false,
+	];
+	$pdo = new PDO($dsn, DB_USER, DB_PASS, $opt);
+	
+	$sql = "DELETE FROM afreecatv_streams WHERE 1";
+	$pdo->query($sql);
+	
+	$sql = 'INSERT INTO afreecatv_streams (name) VALUES ';
+	$insertQuery = array();
+	$insertData = array();
+	foreach ($AfreecaLiveStreamList as $row) {
+		$insertQuery[] = '(?)';
+		$insertData[] = $row;
+	}
+	if (!empty($insertQuery)) {
+		$sql .= implode(', ', $insertQuery);
+		$stmt = $pdo->prepare($sql);
+		$stmt->execute($insertData);
+	}
 
-/*
-$sql = 'INSERT INTO afreecatv_streams ( name) VALUES ';
-$insertQuery = array();
-$insertData = $bb;
-$n = 0;
-foreach ($insertData as $row) {
-    $insertQuery[] = '(:name' .  ')';
-    $insertData['name' . $n] = $row;
-    $n++;
+	echo "New records added successfully";
+} catch (PDOException $e) {
+    echo 'Database exception: ',  $e->getMessage(), "\n";
+} finally {
 }
-
-if (!empty($insertQuery)) {
-    $sql .= implode(', ', $insertQuery);
-    $stmt = $db->prepare($sql);
-    $stmt->execute($insertData);
-}
-*/
-
-
-
-
-
-
-
-
-
-
+$pdo = null;
 
 // add all user ids into array
 function arraySearch($searchCriteria, $array, $resultArray) {
