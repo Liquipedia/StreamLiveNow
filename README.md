@@ -11,10 +11,12 @@ If the player or organization is live, a notification will be shown on the wiki 
 * afreecatvStreamList.php - 
 * parser.php - 
 * api.php - provides GET method, call examples:
-** 	/api.php?streamingService=twitch&channelName=medrybw
-** 	/api.php?streamingService=afreecatv&channelName=cksgmldbs
-** 	/twitch.com/medrybw
-** 	/afreecatv.com/cksgmldbs
+```
+/api/api.php?streamingService=twitch&channelName=medrybw
+/api/api.php?streamingService=afreecatv&channelName=cksgmldbs
+/api/twitch.com/medrybw
+/api/afreecatv.com/cksgmldbs
+```
 
 ## TODO:
 
