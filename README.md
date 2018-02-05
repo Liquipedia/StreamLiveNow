@@ -39,7 +39,6 @@ How we check if the stream is live.
 * Huomao support
 * Douyu support
 * Facebook support
-* add gulp/grunt
 * unit tests
 * code comments
 * proper error logging and management
