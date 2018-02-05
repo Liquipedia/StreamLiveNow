@@ -37,45 +37,46 @@
 		<div class="infobox-center infobox-icons">  
 			<a rel="nofollow noopener" class="external text" href="https://www.afreecatv.com/asgasga" >
 				<i class="lp-icon lp-twitch"></i>asgasga afreeca
-			</a> |
+			</a> <br />	
 			<a rel="nofollow noopener" class="external text" href="https://www.afreecatv.com/yyy2222" >
 				<i class="lp-icon lp-twitch"></i>yyy2222 afreeca
-			</a> |
+			</a> <br />	
 			<a rel="nofollow noopener" class="external text" href="https://www.twitch.tv/medrybw" >
 				<i class="lp-icon lp-twitch"></i>medryBW twitch
-			</a> |
+			</a> <br />	
 			<a rel="nofollow noopener" class="external text" href="https://www.youtube.com/UCVeETS7uZTAARqvv2zssZCw" >
 				<i class="lp-icon lp-twitch"></i>UCVeETS7uZTAARqvv2zssZCw youtube
 			</a>
-			<br />
+			<br /><br />
 
-			<a rel="nofollow noopener" class="external text" href="https://www.twitch.tv/test_twitch" >
-				<i class="lp-icon lp-twitch"></i>test_twitch
-			</a> |
-			<a rel="nofollow noopener" class="external text" href="https://www.youtube.com/test_youtube" >
-				<i class="lp-icon lp-twitch"></i>test_youtube
-			</a> |
-			<a rel="nofollow noopener" class="external text" href="https://www.dailymotion.com/test_dailymotion" >
-				<i class="lp-icon lp-twitch"></i>test_dailymotion
-			</a> |
-			<a rel="nofollow noopener" class="external text" href="https://www.smashcast.com/test_smashcast" >
-				<i class="lp-icon lp-twitch"></i>test_smashcast
-			</a> |
+			
 			<a rel="nofollow noopener" class="external text" href="https://www.afreecatv.com/test_afreecatv" >
 				<i class="lp-icon lp-twitch"></i>test_afreecatv
-			</a> |
+			</a> <br />		
+			<a rel="nofollow noopener" class="external text" href="https://www.dailymotion.com/test_dailymotion" >
+				<i class="lp-icon lp-twitch"></i>test_dailymotion
+			</a> <br />	
 			<a rel="nofollow noopener" class="external text" href="https://www.douyu.com/test_douyu" >
 				<i class="lp-icon lp-twitch"></i>test_douyu
-			</a> |
-			<a rel="nofollow noopener" class="external text" href="https://www.huomao.com/test_huomao" >
-				<i class="lp-icon lp-twitch"></i>test_huomao
-			</a> |
-			<a rel="nofollow noopener" class="external text" href="https://www.garena.live/test_garena" >
-				<i class="lp-icon lp-twitch"></i>test_garena
-			</a> |
+			</a> <br />			
 			<a rel="nofollow noopener" class="external text" href="https://www.facebook.com/test_facebook" >
 				<i class="lp-icon lp-twitch"></i>test_facebook
-			</a> |
+			</a> <br />				
+			<a rel="nofollow noopener" class="external text" href="https://www.garena.live/test_garena" >
+				<i class="lp-icon lp-twitch"></i>test_garena
+			</a> <br />				
+			<a rel="nofollow noopener" class="external text" href="https://www.huomao.com/test_huomao" >
+				<i class="lp-icon lp-twitch"></i>test_huomao
+			</a> <br />				
+			<a rel="nofollow noopener" class="external text" href="https://www.smashcast.com/test_smashcast" >
+				<i class="lp-icon lp-twitch"></i>test_smashcast
+			</a> <br />	
+			<a rel="nofollow noopener" class="external text" href="https://www.twitch.tv/test_twitch" >
+				<i class="lp-icon lp-twitch"></i>test_twitch
+			</a> <br />	
+			<a rel="nofollow noopener" class="external text" href="https://www.youtube.com/test_youtube" >
+				<i class="lp-icon lp-twitch"></i>test_youtube
+			</a>
 		</div>
 	</div>
 </div>
