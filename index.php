@@ -1,7 +1,14 @@
 <html>
 <head>
+<meta name= "robots" content = "noindex, nofollow" /> 
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 <title>Stream Service Test Page</title>
+<style>
+.awerti-blink-class1
+{
+	background-color: aqua;
+}
+</style>
 </head>
 <body>
 <!-- same structure as player pages with infobox on Liquipedia -->

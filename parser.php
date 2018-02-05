@@ -2,38 +2,21 @@
 
 require_once("vendor/autoload.php");
 
-/*
-AfreecaTV channel list parser
-Get Live stream list:
-http://live.afreecatv.com/afreeca/broad_list_api.php
-
-make it a valid array, remove "var oBroadListData = "
-json_encode
-filter out live streams
-then (maybe?) filter out streams linked on liquipedia. If not, there will be too many irrelevant links
-store info in DB
-add cron job
-escaped unicode symbols in the array, do something about that...
-Korean specific symbols
-
-display initial channel count
-display LIVE channel count
-*/
-
 //$api = 'http://terbets.id.lv/tl/1.js';
 //$api = 'http://terbets.id.lv/tl/2.js';
 $api ="http://live.afreecatv.com/afreeca/broad_list_api.php";
 
-// add to file instead of losing content all the time
-$fp = fopen(dirname(__FILE__).'/errorlog.txt', 'w');
+$curl_log = fopen(dirname(__FILE__).'/curl_log.txt', 'a');
 $ch = curl_init();
 curl_setopt_array($ch, array(
 	CURLOPT_RETURNTRANSFER => true,
 	CURLOPT_VERBOSE => true,							
-	CURLOPT_STDERR => $fp, 								
+	CURLOPT_STDERR => $curl_log, 								
 	CURLOPT_URL => $api
 ));
 $response = curl_exec($ch);
+$output= fread($curl_log, 2048);
+fclose($curl_log);
 curl_close($ch);
 
 // convert to utf-8, lose all Korean symbols in the process
@@ -47,14 +30,12 @@ $old = array("var oBroadListData = ", 	"}};", 	"'", "\\");
 $new = array("", 						"}}", 	'"', "");
 $response = str_replace($old, $new, $response);
 $json = json_decode($response, true);
-
-
+// log error
+// echo json_last_error();
 
 echo "<pre>";
 //print_r($json);
 echo "</pre>";
-
-
 
 $aa = [];
 $AfreecaLiveStreamList = arraySearch('LIVE', $json['CHANNEL']['REAL_BROAD'],$aa);
@@ -65,8 +46,8 @@ echo "</pre>";
 
 
 
-
-
+// check if we retrieved stream list. If we did not, abandon.
+// error log
 
 
 // 	remove all existing streams in DB
@@ -80,8 +61,8 @@ try {
 	];
 	$pdo = new PDO($dsn, DB_USER, DB_PASS, $opt);
 	if ($pdo->connect_error){
-		// log errror
-		die("Connection failed: " . $conn->connect_error);
+		error_log("Connection failed " . $conn->connect_error . "\n", 3, __DIR__ . "/error_log.txt");
+		die;
 	}
 
 	$sql = "DELETE FROM afreecatv_streams WHERE 1";
@@ -99,9 +80,10 @@ try {
 		$stmt = $pdo->prepare($sql);
 		$stmt->execute($insertData);
 	}
-	echo "New records added successfully";
+	echo "New records added successfully to DB.";
 } catch (PDOException $e) {
-    echo 'Database exception: ',  $e->getMessage(), "\n";
+	error_log("Database exception: " . $e->getMessage() . "\n", 3, __DIR__ . "/error_log.txt");
+	die;
 }
 $pdo = null;
 
@@ -117,5 +99,4 @@ function arraySearch($searchCriteria, $array, $resultArray) {
    return $resultArray;
 }
 
-//echo json_last_error();
 ?>

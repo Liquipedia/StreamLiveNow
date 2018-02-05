@@ -26,19 +26,32 @@ How we check if the stream is live.
 /api/afreecatv.com/cksgmldbs
 ```
 
+### Error logging:
+* curl_log.txt - messages from connecting to afreecatv API
+* error_log - unmanaged system error messages
+* error_log.txt - managed app error messages
+
 ## TODO:
 * use a hook to load the javascript only on pages with an infobox.
-* Youtube support
-* proper error logging and management
-* 
+* separate link finding in html from querying the API.
+* change js to find more than 1 link per streaming service (for example, if there are 2 twitch links, only 1 will be checked)
+
+
+
+* Garena support
 * Huomao support
 * Douyu support
 * Facebook support
-* change js to find more than 1 link per streaming service (for example, if there are 2 twitch links, only 1 will be checked)
-* log request info, to make future easier
+* add gulp/grunt
+* unit tests
+* code comments
+* proper error logging and management
+* filter AfreecaTV stream list to only include streams from liquipedia pages. But it's really low priority, since 4000 entries in database is not much. And having 50 links would not offer any noticeable advantage.
 * evaluate performance of this script. Is it too slow to handle all the requests?
 * defense against improper use? Someone making too many requests?
 * return live: false if varnish cache is not working. I mean, what happens if varnish stops working properly? Too many requests would be made to twitch/smashcast/dailymotion/youtube APIs then. Hmm...
+
+
 
 ## Credits
 

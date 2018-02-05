@@ -1,6 +1,5 @@
 {
 	"require": {
-		"google/apiclient":"2.0",
 		"phpdocumentor/phpdocumentor": "2.*",
 		"facebook/graph-sdk": "5.6.1"
     },
@@ -8,6 +7,9 @@
     	"optimize-autoloader": true
     },
 	"autoload": {
-		"files": ["config/db.php"]
+		"files": [
+			"config/db.php",
+			"lib/lib.php"
+		]
 	}
 }

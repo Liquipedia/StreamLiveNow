@@ -11,25 +11,27 @@ try {
 	];
 	$pdo = new PDO($dsn, DB_USER, DB_PASS, $opt);
 	if ($pdo->connect_error){
-		die("Database connection failed: " . $conn->connect_error);
+		LogError("DB connection error: " . $conn->connect_error . "\n");
+		die;
 	} 
 	$sql = "SELECT * FROM afreecatv_streams WHERE 1";
 	$result = $pdo->query($sql);
 	
 	if ($result->rowCount() > 0) {
-		echo $result->rowCount() . " streams were found in database.<br />";
+		echo $result->rowCount() . " streams were found in database: <br />";
 	} else{
-		echo "Streams were not found.";
+		LogError("AfreecaTV streams were not found in database\n");
+		die;
 	}
-	
+
 	foreach($result as $rows)
 	{
-		echo $rows['name'] . "<br />";
+		echo $rows['name'] . " ";
 	}
 	
 } catch (PDOException $e) {
-	echo 'Database exception: ',  $e->getMessage(), "\n";
+	LogError("Database PDO exception" . $e->getMessage() . " \n");
+	die;
 }
 $pdo = null;
-
 ?>

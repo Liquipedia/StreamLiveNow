@@ -1,6 +1,21 @@
 <?php
 
+/*
+echo $vendorDir = dirname(dirname(__FILE__));
+echo "<br />"; 
+echo $baseDir = dirname($vendorDir);
+*/
+
 require_once("../vendor/autoload.php");
+
+
+
+/*
+
+"google/apiclient":"2.0"
+"phpdocumentor/phpdocumentor": "2.*"
+
+*/
 
 $channelName = filter_var ( $_GET['channelName'], FILTER_SANITIZE_STRING);
 $streamingService = filter_var ( $_GET['streamingService'], FILTER_SANITIZE_STRING);
@@ -34,14 +49,16 @@ switch($streamingService)
 	case "facebook.com":
 		checkStreamStatusOnFacebook($channelName, $streamingService);
 		break;
+	case "garena.live":
+		checkStreamStatusOnGarena($channelName, $streamingService);
+		break;
 	default:
 		echo '{"live" : "false", "error" : "streaming service not recognized"}';
-		// log an error?
+		LogError("Streaming service not recognized: " . $streamingService . "\n");
 		break;
 }
 
-function checkStreamStatusOnSmashcast($api, $channelName, $streamingService)
-{
+function checkStreamStatusOnSmashcast($api, $channelName, $streamingService){
 	$ch = curl_init();
 	curl_setopt_array($ch, array(
 		CURLOPT_RETURNTRANSFER => true,
@@ -60,8 +77,7 @@ function checkStreamStatusOnSmashcast($api, $channelName, $streamingService)
 	}
 }
 
-function checkStreamStatusOnDailymotion($api, $channelName, $streamingService)
-{
+function checkStreamStatusOnDailymotion($api, $channelName, $streamingService){
 	$ch = curl_init();
 	curl_setopt_array($ch, array(
 		CURLOPT_RETURNTRANSFER => true,
@@ -80,8 +96,7 @@ function checkStreamStatusOnDailymotion($api, $channelName, $streamingService)
 	}
 }
 
-function checkStreamStatusOnTwitch($api, $channelName, $streamingService)
-{
+function checkStreamStatusOnTwitch($api, $channelName, $streamingService){
 	$clientId = 'iunn9vjy5ffoaowyf6bx5nxp6ttjsw';
 	$ch = curl_init();
 	curl_setopt_array($ch, array(
@@ -104,40 +119,38 @@ function checkStreamStatusOnTwitch($api, $channelName, $streamingService)
 	}
 }
 
-function checkStreamStatusOnAfreeca($channelName, $streamingService)
-{
+function checkStreamStatusOnAfreeca($channelName, $streamingService){
 	try {
 		$dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
-		$opt = [
+		$options = [
 			PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
 			PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 			PDO::ATTR_EMULATE_PREPARES   => false,
 		];
-		$pdo = new PDO($dsn, DB_USER, DB_PASS, $opt);
+		$pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
 		if ($pdo->connect_error){
-			//die("Database connection failed: " . $conn->connect_error);
-		} 
+			LogError("DB connection failed " . $pdo->connect_error . "\n");
+			die;
+		}
+
 		$sql = "SELECT * FROM afreecatv_streams WHERE name = '" . $channelName . "'";
 		$result = $pdo->query($sql);
-		
 		if ($result->rowCount() > 0) {
 			jsonResponse("true", $channelName, $streamingService);
 		} else{
 			jsonResponse("false", $channelName, $streamingService);
 		}
 	} catch (PDOException $e) {
-		//echo 'Database exception: ',  $e->getMessage(), "\n";
+		LogError("Database exception: " . $e->getMessage() . "\n");
+		die;
 	}
 	$pdo = null;
 }
 
-function checkStreamStatusOnYoutube($channelName, $streamingService)
-{
+function checkStreamStatusOnYoutube($channelName, $streamingService){
 	$API_KEY = 'AIzaSyB-rpirk39e2HoC1VxS6uTpM2jgKQuLp90';
 
-	$channelInfo = 'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId='.$channelName.'&type=video&eventType=live&key='.$API_KEY;
-
-	// echo $channelInfo;
+	$channelInfo = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=" . $channelName . "&type=video&eventType=live&key=" . $API_KEY;
 	
 	$extractInfo = file_get_contents($channelInfo);
 	$extractInfo = str_replace('},]',"}]",$extractInfo);
@@ -151,23 +164,52 @@ function checkStreamStatusOnYoutube($channelName, $streamingService)
 	}
 }
 
-function checkStreamStatusOnFacebook($channelName, $streamingService)
-{
+function checkStreamStatusOnGarena($channelName, $streamingService){
+	$url = "https://garena.live/api/channel_stream_get";
+	$data = array('channel_id' => 437340);
+	$options = array('http' => array(
+		'method'  => 'POST',
+		'content' => http_build_query($data)
+	));
+	$context  = stream_context_create($options);
+	$result = file_get_contents($url, false, $context);
 
-}
+	echo "<pre>";
+	print_r($result);
+	echo "</pre>";
+	// 391550 1585175
+	$url = "https://garena.live/api/channel_info_get";
+	$data = array('channel_id' => 437340);
+	$options = array('http' => array(
+		'method'  => 'POST',
+		'content' => http_build_query($data)
+	));
+	$context  = stream_context_create($options);
+	$result = file_get_contents($url, false, $context);
 
-function checkStreamStatusOnDouyu($channelName, $streamingService)
-{
+	echo "<pre>";
+	print_r($result);
+	echo "</pre>";
+	
 	jsonResponse("false", $channelName, $streamingService);
 }
 
-function checkStreamStatusOnHuomao($channelName, $streamingService)
-{
+function checkStreamStatusOnFacebook($channelName, $streamingService){
+
+}
+
+function checkStreamStatusOnDouyu($channelName, $streamingService){
 	jsonResponse("false", $channelName, $streamingService);
 }
 
-function jsonResponse($bool, $channelName, $streamingService)
-{
+function checkStreamStatusOnHuomao($channelName, $streamingService){
+	jsonResponse("false", $channelName, $streamingService);
+}
+
+
+
+function jsonResponse($bool, $channelName, $streamingService){
 	echo '{"live":"' . $bool . '","channel":"' . $channelName .  '","streaming_service":"' . $streamingService .  '"}';
 }
+
 ?>
