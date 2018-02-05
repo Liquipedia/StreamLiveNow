@@ -35,9 +35,6 @@ How we check if the stream is live.
 * use a hook to load the javascript only on pages with an infobox.
 * separate link finding in html from querying the API.
 * change js to find more than 1 link per streaming service (for example, if there are 2 twitch links, only 1 will be checked)
-
-
-
 * Garena support
 * Huomao support
 * Douyu support
@@ -46,15 +43,17 @@ How we check if the stream is live.
 * unit tests
 * code comments
 * proper error logging and management
+* blinking animation if stream is live - change it to something better!
 * filter AfreecaTV stream list to only include streams from liquipedia pages. But it's really low priority, since 4000 entries in database is not much. And having 50 links would not offer any noticeable advantage.
 * evaluate performance of this script. Is it too slow to handle all the requests?
 * defense against improper use? Someone making too many requests?
 * return live: false if varnish cache is not working. I mean, what happens if varnish stops working properly? Too many requests would be made to twitch/smashcast/dailymotion/youtube APIs then. Hmm...
 
-
+## Dependencies:
+facebook/graph-sdk": "5.6.1"
+phpdocumentor/phpdocumentor": "2.*"
 
 ## Credits
 
-
 ## License
-* All original code is under the GPLv3
+* To be decided

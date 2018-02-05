@@ -11,68 +11,88 @@
 </style>
 </head>
 <body>
+
+
+
+
+<a href="parser.php" >parser.php</a> |
+<a href="afreecatvStreamList.php" >afreecatvStreamList.php</a> |
+<a href="http://terbets.id.lv/tl/api/api.php" >/api/api.php</a>
+<br /><br />
+
+
+
+
+
 <!-- same structure as player pages with infobox on Liquipedia -->
 <div class="fo-nttax-infobox">
 
-	<a href="parser.php" >parser.php</a> |
-	<a href="afreecatvStreamList.php" >afreecatvStreamList.php</a> |
-	<a href="http://terbets.id.lv/tl/api/api.php" >/api/api.php</a>
-	<br /><br />
+	<div>
+		<div class="infobox-header wiki-backgroundcolor-light">
+			PlayerName
+		</div>
+	</div>
 
-	<a rel="nofollow noopener" class="external text" href="https://www.afreecatv.com/asgasga" >
-		<i class="lp-icon lp-twitch"></i>asgasga afreeca
-	</a> |
-	<a rel="nofollow noopener" class="external text" href="https://www.afreecatv.com/yyy2222" >
-		<i class="lp-icon lp-twitch"></i>yyy2222 afreeca
-	</a> |
-	<a rel="nofollow noopener" class="external text" href="https://www.twitch.tv/medrybw" >
-		<i class="lp-icon lp-twitch"></i>medryBW twitch
-	</a> |
-	<a rel="nofollow noopener" class="external text" href="https://www.youtube.com/UCVeETS7uZTAARqvv2zssZCw" >
-		<i class="lp-icon lp-twitch"></i>UCVeETS7uZTAARqvv2zssZCw youtube
-	</a>
-	<br />
+	<div>
+		<div class="infobox-center infobox-icons">  
+			<a rel="nofollow noopener" class="external text" href="https://www.afreecatv.com/asgasga" >
+				<i class="lp-icon lp-twitch"></i>asgasga afreeca
+			</a> |
+			<a rel="nofollow noopener" class="external text" href="https://www.afreecatv.com/yyy2222" >
+				<i class="lp-icon lp-twitch"></i>yyy2222 afreeca
+			</a> |
+			<a rel="nofollow noopener" class="external text" href="https://www.twitch.tv/medrybw" >
+				<i class="lp-icon lp-twitch"></i>medryBW twitch
+			</a> |
+			<a rel="nofollow noopener" class="external text" href="https://www.youtube.com/UCVeETS7uZTAARqvv2zssZCw" >
+				<i class="lp-icon lp-twitch"></i>UCVeETS7uZTAARqvv2zssZCw youtube
+			</a>
+			<br />
 
-	<a rel="nofollow noopener" class="external text" href="https://www.twitch.tv/test_twitch" >
-		<i class="lp-icon lp-twitch"></i>test_twitch
-	</a> |
-	<a rel="nofollow noopener" class="external text" href="https://www.youtube.com/test_youtube" >
-		<i class="lp-icon lp-twitch"></i>test_youtube
-	</a> |
-	<a rel="nofollow noopener" class="external text" href="https://www.dailymotion.com/test_dailymotion" >
-		<i class="lp-icon lp-twitch"></i>test_dailymotion
-	</a> |
-	<a rel="nofollow noopener" class="external text" href="https://www.smashcast.com/test_smashcast" >
-		<i class="lp-icon lp-twitch"></i>test_smashcast
-	</a> |
-	<a rel="nofollow noopener" class="external text" href="https://www.afreecatv.com/test_afreecatv" >
-		<i class="lp-icon lp-twitch"></i>test_afreecatv
-	</a> |
-	<a rel="nofollow noopener" class="external text" href="https://www.douyu.com/test_douyu" >
-		<i class="lp-icon lp-twitch"></i>test_douyu
-	</a> |
-	<a rel="nofollow noopener" class="external text" href="https://www.huomao.com/test_huomao" >
-		<i class="lp-icon lp-twitch"></i>test_huomao
-	</a> |
+			<a rel="nofollow noopener" class="external text" href="https://www.twitch.tv/test_twitch" >
+				<i class="lp-icon lp-twitch"></i>test_twitch
+			</a> |
+			<a rel="nofollow noopener" class="external text" href="https://www.youtube.com/test_youtube" >
+				<i class="lp-icon lp-twitch"></i>test_youtube
+			</a> |
+			<a rel="nofollow noopener" class="external text" href="https://www.dailymotion.com/test_dailymotion" >
+				<i class="lp-icon lp-twitch"></i>test_dailymotion
+			</a> |
+			<a rel="nofollow noopener" class="external text" href="https://www.smashcast.com/test_smashcast" >
+				<i class="lp-icon lp-twitch"></i>test_smashcast
+			</a> |
+			<a rel="nofollow noopener" class="external text" href="https://www.afreecatv.com/test_afreecatv" >
+				<i class="lp-icon lp-twitch"></i>test_afreecatv
+			</a> |
+			<a rel="nofollow noopener" class="external text" href="https://www.douyu.com/test_douyu" >
+				<i class="lp-icon lp-twitch"></i>test_douyu
+			</a> |
+			<a rel="nofollow noopener" class="external text" href="https://www.huomao.com/test_huomao" >
+				<i class="lp-icon lp-twitch"></i>test_huomao
+			</a> |
+			<a rel="nofollow noopener" class="external text" href="https://www.garena.live/test_garena" >
+				<i class="lp-icon lp-twitch"></i>test_garena
+			</a> |
+			<a rel="nofollow noopener" class="external text" href="https://www.facebook.com/test_facebook" >
+				<i class="lp-icon lp-twitch"></i>test_facebook
+			</a> |
+		</div>
+	</div>
 </div>
 <!-- display debug info here -->
 <div id="debug">
 </div>
 <script type="text/javascript">
+findLink("afreecatv.com");
+findLink("dailymotion.com");
+findLink("douyu.com");
+findLink("facebook.com");
+findLink("garena.live");
+findLink("huomao.com");
+findLink("smashcast.com");
 findLink("twitch.tv");
 findLink("youtube.com");
-findLink("dailymotion.com");
-findLink("smashcast.com");
-findLink("afreecatv.com");
-findLink("douyu.com");
-findLink("huomao.com");
-/*
-ToDo:
-// don't run this script on all pages...
-// stripping http(s):// part. Optimize and test carefully!
-// blinking animation if stream is live - change it to something better!
-// only finds the first link on the page
-*/
+
 function findLink(streamingService)
 {
 	if ($("div.fo-nttax-infobox").find('a[href*="' + streamingService + '"]').length)
